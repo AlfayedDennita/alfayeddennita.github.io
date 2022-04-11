@@ -1,0 +1,348 @@
+/* #a Base Styles */
+
+:root {
+  /* #e Colors */
+
+  /* #f Hex */
+
+  --primary-color: #ff725e;
+  --secondary-color: #ffb1a4;
+  --white: #fff;
+  --black: #303030;
+  --gray: #efefef;
+  --gray-1: #ddd;
+  --dark-gray: #aaa;
+  --dark-gray-1: #888;
+
+  /* #f RGB */
+
+  --primary-color-rgb: 255, 114, 94;
+  --white-rgb: 255, 255, 255;
+
+  /* #e Fonts */
+
+  --poppins-font: "Poppins", Arial, sans-serif;
+  --quicksand-font: "Quicksand", Arial, sans-serif;
+  --rock3d-font: "Rock 3D", Arial, sans-serif;
+  --font-awesome: "FontAwesome";
+}
+
+::selection {
+  background-color: rgba(var(--primary-color-rgb), 0.8);
+  color: var(--white);
+}
+
+* {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  margin: 0;
+  font-family: var(--quicksand-font);
+  color: var(--black);
+}
+
+*::-webkit-scrollbar {
+  width: 0.25rem;
+  height: 0.25rem;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: var(--primary-color);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--white);
+  border-radius: 0.1rem;
+}
+
+body {
+  min-width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: 576px) {
+  body {
+    justify-content: center;
+    padding: 2rem;
+    background-color: var(--primary-color);
+    background-image: url("images/spline.png");
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position-x: 80%;
+  }
+}
+
+a {
+  color: var(--primary-color);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--poppins-font);
+}
+
+.logo {
+  font-family: var(--rock3d-font);
+  font-size: 2rem;
+}
+
+button, .btn {
+  --btn-color-rgb: var(--primary-color-rgb);
+  --text-color: var(--white);
+  --border-color: rgb(var(--btn-color-rgb));
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.9rem;
+  background-color: rgb(var(--btn-color-rgb));
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  font-weight: bold;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: box-shadow 0.25s;
+}
+
+button:hover, .btn:hover {
+  box-shadow: 0 0.2rem 0.5rem rgba(var(--btn-color-rgb), 0.5);
+}
+
+button > *, .btn > * {
+  color: var(--text-color);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.input-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group > i {
+  position: absolute;
+  top: 50%;
+  left: 1.25rem;
+  transform: translateY(-50%);
+  color: var(--dark-gray-1);
+}
+
+.checkbox-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+input[type="email"], input[type="password"] {
+  padding: 1rem;
+  border: 1px solid var(--gray-1);
+  border-radius: 0.5rem;
+  color: var(--dark-gray);
+  transition: 0.25s;
+}
+
+input[type="email"]:focus, input[type="password"]:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  color: var(--black);
+}
+
+.input-group input[type="email"],
+.input-group input[type="password"] {
+  padding-left: 3rem;
+}
+
+input[type="checkbox"] {
+  position: relative;
+  appearance: none;
+  width: 0.9rem;
+  height: 0.9rem;
+  border: 1px solid var(--primary-color);
+  border-radius: 0.1rem;
+}
+
+input[type="checkbox"]:checked {
+  background-color: var(--primary-color);
+}
+
+input[type="checkbox"]:checked::after {
+  content: "\f00c";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-awesome);
+  font-size: 0.5rem;
+  color: var(--white);
+}
+
+/* #a Main Styles */
+
+main {
+  display: grid;
+  background-color: var(--white);
+  overflow: hidden;
+}
+
+@media (min-width: 576px) {
+  main {
+    max-width: 70rem;
+    border-radius: 1rem;
+  }
+}
+
+@media (min-width: 992px) {
+  main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+main > section {
+  display: flex;
+  flex-direction: column;
+}
+
+/* #b Decoration */
+
+#decoration {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 3rem 5rem;
+  background-color: var(--secondary-color);
+  background-image: url("images/triangle-nodes.png");
+  background-size: 5rem;
+  background-repeat: no-repeat;
+  background-position: 5% 95%;
+  text-align: center;
+}
+
+@media (min-width: 992px) {
+  #decoration {
+    display: flex;
+  }
+}
+
+#decoration .logo {
+  font-size: 2.5rem;
+}
+
+#decoration img {
+  max-height: 20rem;
+}
+
+#decoration p {
+  font-family: var(--poppins-font);
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: var(--white);
+}
+
+/* #b Login */
+
+#login {
+  padding: 3rem 2rem;
+  gap: 1.5rem;
+}
+
+@media (min-width: 576px) {
+  #login {
+    padding: 5rem;
+  }
+}
+
+/* #c Logo */
+
+#login .logo::first-letter {
+  color: var(--primary-color);
+}
+
+@media (min-width: 992px) {
+  #login .logo {
+    display: none
+  }
+}
+
+/* #c Header */
+
+#login .header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+#login .header h2 {
+  font-size: 2rem;
+}
+
+#login .header p {
+  color: var(--dark-gray);
+}
+
+/* #c Third-Party Login */
+
+#login .third-party-login {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.9rem;
+}
+
+#login .third-party-login > * {
+  flex-grow: 1;
+}
+
+#login .third-party-login .google {
+  --btn-color-rgb: var(--white-rgb);
+  --text-color: var(--dark-gray-1);
+  --border-color: var(--gray);
+}
+
+#login .third-party-login .facebook {
+  --btn-color-rgb: 82, 123, 203;
+}
+
+/* #c Divider */
+
+#login .divider {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+  color: var(--dark-gray);
+}
+
+#login .divider::before,
+#login .divider::after {
+  content: "";
+  flex-grow: 1;
+  border-top: 1px solid var(--gray);
+  border-bottom: 1px solid var(--gray);
+}
+
+/* #c Form */
+
+#login form .checkbox-group label {
+  font-size: 0.9rem;
+  color: var(--dark-gray);
+}
