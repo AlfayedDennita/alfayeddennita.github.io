@@ -46,7 +46,7 @@ class SlicingPortfolioComponent {
           <div class="image-container"><img src="${data.image_url}" alt="${data.name} Screenshot"></div>
           <p>${data.name}</p>
         </a>
-        <a class="btn-icon" href="${data.reference_url}" title="${data.name} Reference"><i class="${data.reference_icon}"></i><span>Reference</span></a>
+        <a class="btn-icon" href="${data.reference_url}" rel="nofollow" title="${data.name} Reference"><i class="${data.reference_icon}"></i><span>Reference</span></a>
       </li>
     `;
   }
